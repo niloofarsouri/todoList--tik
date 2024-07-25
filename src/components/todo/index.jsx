@@ -1,34 +1,30 @@
+import { useContext } from 'react';
 import styles from './index.module.css'
+import TodoListContext from '../../context/context';
 
 
 
 
 function Todo({ onDone }) {
 
+    const { inputValue } = useContext(TodoListContext)
 
     return (
         <>
-            <div className='todo_list'>
+            <ol>
+                {
+                    inputValue.map((item, index) => {
+                        return (
+                            <div className={styles.dolist}>
 
-                <ol>
-                    {
-                        inputValue.map((item, index) => {
-                            return (
-                                <div className='dolist'>
-                                    <li key={index}>{item}</li>
-                                    {
-                                        done ?
-                                            <img src="./icons8-done-100.png" alt="done" />
-                                            :
-                                            <button onClick={() => onDone(true)}>done</button>
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </ol>
+                                <li key={index}>{item.title}</li>
+                                <button onClick={() => onDone(index)}>done</button>
 
-            </div>
+                            </div>
+                        )
+                    })
+                }
+            </ol>
         </>
     )
 }

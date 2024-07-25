@@ -1,0 +1,38 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+button {
+    background-color: #FF33AE;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.todo_list {
+    width: 70%;
+    height: 500px;
+    background-color: white;
+    border: 1px solid #FF33AE;
+    margin-top: 5rem;
+    box-shadow: 15px 15px 15px darkgray;
+    padding: 2rem 3rem;
+}
+
+.todo_list img {
+    width: 50px;
+}
+
+.dolist {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.dolist li {
+    margin: 1rem;
+}

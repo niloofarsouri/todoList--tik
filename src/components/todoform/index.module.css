@@ -1,0 +1,36 @@
+.main_header {
+    width: 100%;
+    height: 200px;
+    background-color: #FF33AE;
+    display: flex;
+    justify-content: center;
+}
+
+.write_todo {
+    width: 70%;
+    height: 130px;
+    margin-top: 7rem;
+    border: 1px solid #FF33AE;
+    background-color: white;
+    color: rgb(80, 80, 80);
+    box-shadow: 15px 15px 15px darkgray;
+    text-align: center;
+}
+
+.sub_write_todo {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+input {
+    width: 70%;
+    padding: 0.5rem;
+}
+
+button {
+    background-color: #FF33AE;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+}
