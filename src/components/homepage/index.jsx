@@ -32,10 +32,11 @@ function Homepage() {
 
         inputValue[i].isdone = 'true'
         console.log(inputValue[i].isdone)
-        const doneValue = inputValue.filter(item => item !== inputValue[i])
-        // console.log(doneValue)
-        setInputValue(doneValue)
 
+        if (window.confirm('Are you done ?')) {
+            const doneValue = inputValue.filter(item => item !== inputValue[i])
+            setInputValue(doneValue)
+        }
 
     }
 
