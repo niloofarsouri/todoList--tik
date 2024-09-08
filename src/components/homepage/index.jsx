@@ -1,8 +1,18 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Todo from "../todo";
 import TodoForm from "../todoform";
 import styels from './index.module.css'
 import TodoListContext from "../../context/context";
+
+
+// const getDataFromLs = () => {
+//     const data = localStorage.getItem('inputValue')
+//     if (data) {
+//         return JSON.parse(data)
+//     } else {
+//         return []
+//     }
+// }
 
 
 
@@ -10,6 +20,12 @@ function Homepage() {
 
 
     const { inputRef, inputValue, setInputValue } = useContext(TodoListContext)
+
+    // useEffect(() => {
+    //     localStorage.setItem('inputValue', JSON.stringify(inputValue))
+    // }, [inputValue])
+
+
 
     const handleInput = () => {
 

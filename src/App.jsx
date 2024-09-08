@@ -1,14 +1,28 @@
 import { useState } from 'react'
 import './App.css'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import TodoListContext from './context/context'
 import Homepage from './components/homepage'
 
+const getDataFromLs = () => {
+  const data = localStorage.getItem('inputValue')
+  if (data) {
+    return JSON.parse(data);
+  } else {
+    return [];
+  }
+}
+
+
+
 function App() {
 
-  const [inputValue, setInputValue] = useState([])
+  const [inputValue, setInputValue] = useState(getDataFromLs())
   const inputRef = useRef(null)
 
+  useEffect(() => {
+    localStorage.setItem('inputValue', JSON.stringify(inputValue))
+  }, [inputValue])
 
   return (
     <>
